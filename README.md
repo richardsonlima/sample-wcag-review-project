@@ -1,200 +1,394 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+# Desenvolvendo Sites Responsivos com Bootstrap 4
 
-# Python-Mini-Projects
+> * [0. Pré-requisitos para o Minicurso:](#0-pré-requisitos-para-o-minicurso)
+> * [1. Estrutura do HTML](#1-estrutura-do-html)
+> * [2. Criar váriaveis no CSS:](#2-criar-váriaveis-no-css)
+> * [3. Construção do Cabeçalho](#3-construção-do-cabeçalho)
+> * [4. Sidebar (Coluna Lateral)](#4-sidebar-coluna-lateral)
+> * [5. Central Bar (Barra Central)](#5-central-bar-barra-central)
+> * [6. Conteúdo](#6-conteúdo)
+> * [7. Hospedando no Github Pages](#7-hospedando-no-github-pages)
 
-[![All Contributors](https://img.shields.io/github/contributors/Python-World/python-mini-projects)](#contributors-)
-![Issues](https://img.shields.io/github/issues/Python-World/python-mini-projects)
-![Pull Requests](https://img.shields.io/github/issues-pr/Python-World/python-mini-projects?)
-![Forks](https://img.shields.io/github/forks/Python-World/python-mini-projects)
-![Stars](https://img.shields.io/github/stars/Python-World/python-mini-projects)
-![License](https://img.shields.io/github/license/Python-World/python-mini-projects)
+### Objetivo
 
-A collection of simple python mini projects to enhance your Python skills.
+Desenvolvimento de Currículum Online para o participante, no formato de Site Responsivo, utilizando o Bootstrap como framework front-end e hospedá-lo no [Github Pages](https://pages.github.com/).
 
-If you want to learn about python, visit [here.](https://github.com/Python-World/Py-Resources)
+<img src="img/estrutura-da-pagina.jpg" alt="Personal Page" width=500>
 
-If you are new to Github and open source then, visit [here.](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
+Página de Exemplo: (https://davidallysson.github.io/minicurso-bootstrap/)
 
-## Steps To Follow
+## 0. Pré-requisitos para o Minicurso:
 
-- Select an issue and ask to be _assigned_ to it.
-- Check existing scripts in the [projects](/projects/) directory.
-- **Star** this repository.
-- On the [python-mini-projects](https://github.com/Python-World/python-mini-projects) repo page, click the **Fork** button.
-    <br><img src="https://help.github.com/assets/images/help/repository/fork_button.jpg" title="Fork image" width="400"/>
-- **Clone** your forked repository to your local machine. This button will show you the URL to run.
-    <br><img src="https://docs.github.com/assets/images/help/repository/code-button.png" title="Code button" width="400"/>
+1. Criar uma conta no [Github](https://github.com).
+2. Crie um repositório com o nome no formato _username_.github.io, onde "_username_" é o seu nome de usuário do Github.
+3. Crie uma pasta no seu computador com o nome do repositório e crie um arquivo _index.html_ na raiz do projeto
+4. Execute:
 
-    For example, run this command inside your terminal:
+        git init
+        git add .
+        git commit -m "first commit"
+        git remote add origin https://github.com/username/username.github.io.git
+        git push -u origin master
 
-    ```bash
-    git clone https://github.com/<your-github-username>/python-mini-projects.git
-    ```
+PS: Lembre-se de substituir "username" pelo seu nome de usuário do Github.
 
-    **Replace \<your-github-username\>!**
+PS²: Caso seja sua primeira vez no Git Bash, muito provavelmente ele vai querer fazer algumas configurações antes de você executar qualquer comando. Faça as devidas configurações e só depois execute os comandos acima.
 
-    Learn more about [forking](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) and [cloning a repo](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
-- Before you make any changes, [keep your fork in sync](https://www.freecodecamp.org/news/how-to-sync-your-fork-with-the-original-git-repository/) to avoid merge conflicts:
+## 1. Estrutura do HTML
 
-    ```bash
-    git remote add upstream https://github.com/Python-World/python-mini-projects.git
-    git fetch upstream
-    git pull upstream master
-    git push
-    ```
-    
-    Alternatively, GitHub also provides syncing now - click "Fetch upstream" at the top of your repo below "Code" button.
+    <!DOCTYPE html>
+    <html lang="pt">
+      <head>
+        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+        <meta name="author" content="<Seu Nome>">
+        <meta name="description" content="<Descricao>">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-- If you run into a **merge conflict**, you have to resolve the conflict. There are a lot of guides online, or you can try this one by [opensource.com](https://opensource.com/article/20/4/git-merge-conflict).
+        <title>Personal Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+      </head>
 
-- Checkout to development branch (*name your branch according to the issue name*).
+      <body>
+        <!-- CODIGO -->
 
-    ```bash
-    git checkout -b <branch-name>
-    ```
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+      </body>
+    </html>
 
-- Create a folder in
-  [projects directory](https://github.com/Python-World/python-mini-projects/tree/master/projects)
-  according to issue name.
-- Write your code and add to the respective folder in the projects directory, locally.
-- Don't forget to add a `README.md` in your folder, according to the
-   [README_TEMPLATE.](https://github.com/Python-World/python-mini-projects/blob/master/README_TEMPLATE.md)
-- Add the changes with `git add`, `git commit` ([write a good commit message](https://chris.beams.io/posts/git-commit/), if possible):
+Adicione seu nome como autor da página e defina uma descrição para ela na tag meta. Crie o arquivo "style.css" dentro da pasta CSS e vamos começar a trabalhar em cima dele e da sua página HTML.
 
-    ```bash
-    git add -A
-    git commit -m "<your message>"
-    ```
+## 2. Criar váriaveis no CSS:
 
-- Push the code _to your repository_.
+    :root {
+      --preto:   rgb(88, 88, 90);
+      --cinza:   rgb(231, 231, 233);
+      --amarelo: rgb(255, 202, 8);
+    }
 
-    ```bash
-    git push origin <branch-name>
-    ```
+    body {
+      background-color: var(--cinza);
+    }
 
-- Go to the GitHub page of _your fork_, and **make a pull request**:
+O primeiro passo para a construção da nossa página será criar variáveis CSS com as cores que serão utilizadas no nosso site. As variáveis podem ser criadas em qualquer escopo CSS, contudo para que sejam globais, ou seja, acessadas de qualquer lugar do CSS, nós as declaramos no :root (raiz).
 
-    ![pull request image](https://help.github.com/assets/images/help/pull_requests/choose-base-and-compare-branches.png)
+Vamos aproveitar para colocar em prática as variáveis já definidas. Adicione uma cor cinza ao background da página através da variável e veja a mágica.
 
-    Read more about pull requests on the [GitHub help pages](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-- Now wait, until one of us *reviews your Pull Request*! If there are any conflicts, you will get a notification.
+## 3. Construção do Cabeçalho
 
-## README Template for scripts
+### HTML
+    <div class="container">
+      <div class="row cabecalho">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+          <div class="mainimage"></div>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-6 col-sm-12">
+          <h1><b>JHON DOE</b></h1>
+          <h3>Programmer</h3>
+          <hr>
+          <h3>About Me</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
 
-[README Template](https://github.com/Python-World/python-mini-projects/blob/master/README_TEMPLATE.md)
+Declaramos um _.container_ e vamos iniciar a construção do cabeçalho da página. Criamos uma row e dentro dela duas divs. Uma div será responsável pela imagem e a outra pelo conteúdo. A classe _.cabecalho_ declarada na div "row" será utilizada pelo nosso css para estilizar este trecho da página. A classe _.mainimage_ ficará responsável por exibir a sua foto.
 
-## Connect On Social media
+### CSS
 
-[Join WhatsApp group](https://chat.whatsapp.com/GlLTqQSbocLC23ntKU15O9)
+    .mainimage {
+      width: 256px;
+      height: 256px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 5px solid var(--amarelo);
+      background: url(../img/avatar.png);
+    }
 
-## Contributors ✨
+    .cabecalho {
+      color: var(--white);
+      padding: 10px 0 10px 0;
+      background-color: var(--preto);
+      border-bottom: 5px solid var(--amarelo);
+    }
 
-SR No   | Project | Author  
---- | --- | ---
-1 | [Hello World](https://github.com/Python-World/python-mini-projects/tree/master/projects/Hello) | [Ravi Chavare](https://github.com/chavarera)
-2 | [JSON to CSV](https://github.com/Python-World/python-mini-projects/tree/master/projects/Convert_JSON_to_CSV)| [Murilo Pagliuso](https://github.com/DarkCeptor44)
-3 | [Random Password Generator](https://github.com/Python-World/python-mini-projects/tree/master/projects/Random_password_generator) | [Mitesh](https://github.com/Mitesh2499)
-4 | [Instagram Profile Info](https://github.com/Python-World/python-mini-projects/tree/master/projects/Instagram_profile) | [Ravi Chavare](https://github.com/chavarera)
-5 | [Search string in Files](https://github.com/Python-World/python-mini-projects/tree/master/projects/String_search_from_multiple_files) | [Mitesh](https://github.com/Mitesh2499)
-6 | [Fetch links from Webpage](https://github.com/Python-World/python-mini-projects/tree/master/projects/All_links_from_given_webpage) | [Mitesh](https://github.com/Mitesh2499) & [Michael Mba](https://github.com/mikeysan)
-7 | [Todo App With Flask](https://github.com/Python-World/python-mini-projects/tree/master/projects/Todo_app) | [Mitesh](https://github.com/Mitesh2499)
-8 | [Add Watermark on Images](https://github.com/Python-World/python-mini-projects/tree/master/projects/Image_watermark) | [Mitesh](https://github.com/Mitesh2499)
-9 | [WishList App Using Django](https://github.com/Python-World/python-mini-projects/tree/master/projects/WishList) | [Ravi Chavare](https://github.com/chavarera)
-10 | [Split Folders into Subfolders](https://github.com/Python-World/python-mini-projects/tree/master/projects/Split_folder_into_subfolders) | [Ravi Chavare](https://github.com/chavarera)
-11 | [Download bulk images](https://github.com/Python-World/python-mini-projects/tree/master/projects/Download_images_from_website) | [Mitesh](https://github.com/Mitesh2499)
-12 | [Random word from file](https://github.com/Python-World/python-mini-projects/tree/master/projects/Random_word_from_list) | [Ravi Chavare](https://github.com/chavarera)
-13 | [Battery notification](https://github.com/Python-World/python-mini-projects/tree/master/projects/Battery_notification) | [Mitesh](https://github.com/Mitesh2499)
-14 | [Calculate age](https://github.com/Python-World/python-mini-projects/tree/master/projects/Calculate_age) | [Gaodong](https://github.com/xlgd)
-15 | [Text file analysis](https://github.com/Python-World/python-mini-projects/tree/master/projects/Textfile_analysis) | [m044de](https://github.com/m044de/)
-16 | [Generate image snipets](https://github.com/Python-World/python-mini-projects/tree/master/projects/Py_carbon_clips) | [ravi chavare](https://github.com/Python-World/)
-17 | [Organize file system](https://github.com/Python-World/python-mini-projects/tree/master/projects/Organized_download_folder_with_different_categories) | [Mitesh](https://github.com/Mitesh2499)
-18 | [Send emails](https://github.com/Python-World/python-mini-projects/tree/master/projects/Send_email_from_csv) | [Mitesh](https://github.com/Mitesh2499)
-19 | [Get Ipaddress and Hostname of Website](https://github.com/Python-World/python-mini-projects/tree/master/projects/Find_out_hostname_and_ip_address) | [Nuh Mohammed](https://github.com/NuhMohammed)|
-20 | [Progressbar using tqdm](https://github.com/Python-World/python-mini-projects/tree/master/projects/Terminal_progress_bar_with_images_resizing) | [Mitesh](https://github.com/Mitesh2499)
-21 | [Get meta information of images](https://github.com/Python-World/python-mini-projects/tree/master/projects/Get_meta_information_of_images) | [Gaodong](https://github.com/xlgd)
-22 | [Captures Frames from video](https://github.com/Python-World/python-mini-projects/tree/master/projects/Capture_Video_Frames) | [phileinSophos](https://github.com/phileinSophos/)
-23 | [Fetch Wifi Saved Password Windows](https://github.com/Python-World/python-mini-projects/tree/master/projects/Get_wifi_password) |  [Mitesh](https://github.com/Mitesh2499)
-24 | [Save Screenshot of given Website](https://github.com/Python-World/python-mini-projects/tree/master/projects/Snapshot_of_given_website) | [m044de](https://github.com/m044de/)
-25 | [Split files using no of lines](https://github.com/Python-World/python-mini-projects/tree/master/projects/Split_File) | [phileinSophos](https://github.com/phileinSophos/)
-26 | [Encrypt and decrypt text](https://github.com/Python-World/python-mini-projects/tree/master/projects/Encrypt_and_decrypt_text) | [Gaodong](https://github.com/xlgd)
-27 | [Captures screenshot at regular interval of time](https://github.com/Python-World/python-mini-projects/tree/master/projects/capture_screenshot) | [d33pc](https://github.com/d33pc/)
-28 | [Create password hash](https://github.com/Python-World/python-mini-projects/tree/master/projects/Hashing_passwords) | [m044de](https://github.com/m044de/)
-29 | [Encrypt file and folders](https://github.com/Python-World/python-mini-projects/tree/master/projects/Create_a_script_to_encrypt_files_and_folder) | [Gaodong](https://github.com/xlgd)
-30 | [Decimal to binary and vice versa](https://github.com/Python-World/python-mini-projects/tree/master/projects/Decimal_to_binary_convertor_and_vice_versa) | [Alan Anaya](https://github.com/alananayaa/)
-31 | [Cli Based Todo Application](https://github.com/Python-World/python-mini-projects/tree/master/projects/Cli_todo) | [Audrey Yang](https://github.com/audrey-yang)
-32 | [Currency Convertor cli app](https://github.com/Python-World/python-mini-projects/tree/master/projects/Currency_converter) | [github-of-wone](https://github.com/github-of-wone/)
-33 | [Stopwatch Application](https://github.com/Python-World/python-mini-projects/tree/master/projects/Create_a_simple_stopwatch) | [Gaodong](https://github.com/xlgd)
-34 | [CLI Proxy Tester](https://github.com/Python-World/python-mini-projects/tree/master/projects/cli_proxy_tester) | [Ingo Kleiber](https://github.com/IngoKl)
-35 | [XML to JSON file Convertor](https://github.com/Python-World/python-mini-projects/tree/master/projects/Convert_XML_to_JSON) | [John Kirtley](https://github.com/johnkirtley)
-36 | [Compress file and folders](https://github.com/Python-World/python-mini-projects/tree/master/projects/Write_script_to_compress_folder_and_files) | [Gaodong](https://github.com/xlgd)
-37 | [Find IMDB movie ratings](https://github.com/Python-World/python-mini-projects/tree/master/projects/Find_imdb_rating) | [ShivSt](https://github.com/ShivSt)
-38 | [Convert dictionary to python object](https://github.com/Python-World/python-mini-projects/tree/master/projects/convert_dictionary_to_python_object) | [Varun-22](https://github.com/Varun-22)
-39 | [Move files to alphabetically arranged folders](https://github.com/Python-World/python-mini-projects/tree/master/projects/Write_script_to_move_files_into_alphabetically_ordered_folder) | [Chathura Nimesh](https://github.com/kana800/)
-40 | [Scrape Youtube video comment](https://github.com/Python-World/python-mini-projects/tree/master/projects/Web_scraping_a_youtube_comment) | [Saicharan67](https://github.com/Saicharan67)
-41 | [Website Summerization](https://github.com/Python-World/python-mini-projects/tree/master/projects/Web_page_summation) | [Believe Ohiozua](https://github.com/believeohiozua)
-42 | [Text To speech(mp3)](https://github.com/Python-World/python-mini-projects/tree/master/projects/Text_to_speech) | [Sergej Dikun](https://github.com/Serhazor)
-43 | [Image format conversion](https://github.com/Python-World/python-mini-projects/tree/master/projects/convert_Imgs) | [Ramon Ferreira](https://github.com/ramonfsk)
-44 | [Save random article from wikipedia](https://github.com/Python-World/python-mini-projects/tree/master/projects/Random_Wikipedia_Article) | [Rakshit Puri](https://github.com/skate1512)
-45 | [Check website connectivity](https://github.com/Python-World/python-mini-projects/tree/master/projects/Check_website_connectivity) | [Shiv Thakur](https://github.com/ShivSt)
-46 | [Fetch city weather information](https://github.com/Python-World/python-mini-projects/tree/master/projects/Fetch_current_weather) | [Kushal Agrawal](https://github.com/kushal98)
-47 | [Calculator App](https://github.com/Python-World/python-mini-projects/tree/master/projects/Create_calculator_app) | [Gaodong](https://github.com/xlgd)
-48 | [Merge Csv files](https://github.com/Python-World/python-mini-projects/tree/master/projects/Merge_csv_files) | [Kushal Agrawal](https://github.com/kushal98)
-49 | [Fetch tweets and save in csv](https://github.com/Python-World/python-mini-projects/tree/master/projects/Fetch_and_store_tweets) | [Kushal Agrawal](https://github.com/kushal98)
-50 | [Language Translator using googletrans](https://github.com/Python-World/python-mini-projects/tree/master/projects/Language_translator) | [Ashiqur Rahman Tusher](https://github.com/ashikurt77)
-51 | [Split video using timeperiod](https://github.com/Python-World/python-mini-projects/tree/master/projects/Split_a_video_file_by_given_time_period) | [Chathura Nimesh](https://github.com/kana800/)
-52 | [Fetch unique words from file](https://github.com/Python-World/python-mini-projects/tree/master/projects/Unique_words_in_a_file) | [Rakshit Puri](https://github.com/skate1512)
-53 | [Speech to text converter](https://github.com/Python-World/python-mini-projects/tree/master/projects/Speech_to_text) | [Paulo Henrique](https://github.com/Python-World/python-mini-projects/tree/master/projects/Speech%20to%20text)
-54 | [Set Random Wallpaper](https://github.com/Python-World/python-mini-projects/tree/master/projects/Write_a_script_to_download_a_random_image_from_unsplash_and_set_it_as_wallpaper) | [Chathura Nimesh](https://github.com/kana800/)
-55 | [Find Dominant color from image](https://github.com/Python-World/python-mini-projects/tree/master/projects/Dominant_color) | [Mitesh](https://github.com/Mitesh2499)
-56 | [Ascii art](https://github.com/Python-World/python-mini-projects/tree/master/projects/Ascii_art) | [Shiny Akash](https://github.com/Shiny-Akash)
-57 | [Merge Pdf Files](https://github.com/Python-World/python-mini-projects/tree/master/projects/Merge_pdfs) | [ShivSt](https://github.com/ShivSt)
-58 | [Fetch Open Port](https://github.com/Python-World/python-mini-projects/tree/master/projects/Fetch_open_ports) | [Kushal Agrawal](https://github.com/kushal98)
-59 | [Convert Numbers To Words](https://github.com/Python-World/python-mini-projects/tree/master/projects/Convert_numbers_to_word) | [Niraj Shrestha](https://github.com/CrestNiraj12)
-60 | [Restart and Shutdown System](https://github.com/Python-World/python-mini-projects/tree/master/projects/Shutdown_or_restart_your_device) | [Phillibob55](https://github.com/Phillibob55)
-61 | [Check website connectivity](https://github.com/Python-World/python-mini-projects/tree/master/projects/Check_website_connectivity) | [Shiv Thakur](https://github.com/ShivSt)
-62 | [Digital clock using tkinter](https://github.com/Python-World/python-mini-projects/tree/master/projects/Digital_clock) | [Aditya Jetely](https://github.com/adityaj7)
-63 | [Covert Image To Pdf](https://github.com/Python-World/python-mini-projects/tree/master/projects/Convert_a_image_to_pdf) | [Gaodong](https://github.com/xlgd)
-64 | [Store emails in csv file](https://github.com/Python-World/python-mini-projects/tree/master/projects/Store_emails_in_csv) | [Shiv Thakur](https://github.com/ShivSt)
-65 | [Test Internet Connection](https://github.com/Python-World/python-mini-projects/tree/master/projects/Internet_connection_check) | [Jacob Ogle](https://github.com/Jakeogle94)
-66 | [XKCD Comics Downloader](https://github.com/Python-World/python-mini-projects/tree/master/projects/XKCD_downloader)| [Aditya Jetely](https://github.com/AdityaJ7)
-67 | [Website Blocker And Unblocker](https://github.com/Python-World/python-mini-projects/tree/master/projects/Website_blocker)| [Phillibob55](https://github.com/Phillibob55)
-68 | [Fetch Domain Dns Record](https://github.com/Python-World/python-mini-projects/tree/master/projects/Dns_record)| [Aditya Jetely](https://github.com/AdityaJ7)
-69 | [Python-Auto-Draw](https://github.com/Python-World/python-mini-projects/tree/master/projects/Python_auto_draw)| [Tushar Nankani](https://github.com/tusharnankani)
-70 | [News Website Scraper](https://github.com/Python-World/python-mini-projects/tree/master/projects/News_website_scraper)| [pratik-choudhari](https://github.com/pratik-choudhari)
-71 | [Rock Paper Scissors Game](https://github.com/Python-World/python-mini-projects/tree/master/projects/RockPaperScissors_Game)| [Tushar Nankani](https://github.com/tusharnankani)
-72 | [Zip File Extractor](https://github.com/Python-World/python-mini-projects/tree/master/projects/Extract_zip_files)| [Aditya Jetely](https://github.com/AdityaJ7)
-73 | [Random Password Generator](https://github.com/Python-World/python-mini-projects/blob/master/projects/Random_password_generator)| [Tushar Nankani](https://github.com/tusharnankani)
-74 | [Script to perform Geocoding](https://github.com/Python-World/python-mini-projects/tree/master/projects/Geocoding)| [Aditya Jetely](https://github.com/AdityaJ7)
-75 | [Python Carbon Clips](https://github.com/Python-World/python-mini-projects/tree/master/projects/Py_carbon_clips)| [Ravishankar Chavare](https://github.com/chavarera)
-76 | [QR Code Generator](https://github.com/Python-World/python-mini-projects/tree/master/projects/Qr_code_generator)| [Shiv Thakur](https://github.com/ShivSt)
-77 | [Recursive Password Generator](https://github.com/Python-World/python-mini-projects/tree/master/projects/Recursive_password_generator)| [Erfan Saberi](https://github.com/erfansaberi)
-78 | [Tic Tac Toe](https://github.com/Python-World/python-mini-projects/tree/master/projects/Tic_tac_toe)| [Erfan Saberi](https://github.com/erfansaberi)
-79 | [Tic Tac Toe with AI](https://github.com/Python-World/python-mini-projects/tree/master/projects/Tic_tac_toe_with_ai)| [Tushar Nankani](https://github.com/tusharnankani)
-80 | [Cartoonify an Image](https://github.com/Python-World/python-mini-projects/tree/master/projects/Easy_cartoonify)| [Bartu Yaman](https://github.com/brtymn)
-81 | [Quote Scrapper](https://github.com/Python-World/python-mini-projects/tree/master/projects/Scrape_quotes)| [Anandha Krishnan Aji](https://github.com/anandhakrishnanaji)
-82 | [Time To Load Website](https://github.com/Python-World/python-mini-projects/tree/master/projects/Time_to_load_website)| [Aditya Jetely](https://github.com/AdityaJ7)
-83 | [Customer Loan Repayment Prediction](https://github.com/Python-World/python-mini-projects/tree/master/Notebooks/Customer_loan_repayment_problem)| [ART](https://github.com/Tomyzon1728)
-84 | [Generate Wordcloud from Wikipedia Article](https://github.com/Python-World/python-mini-projects/tree/master/projects/Wikipedia_search_wordcloud)| [Naman Shah](https://github.com/namanshah01)
-85 | [Number Guessing Game](https://github.com/Python-World/python-mini-projects/tree/master/projects/Number_guessing_game)| [Javokhirbek](https://github.com/leader2one)
-86 | [Convert JPEG to PNG](https://github.com/Python-World/python-mini-projects/tree/master/projects/Convert_JPEG_to_PNG)| [AnuragGupta](https://github.com/AnuragGupta806)
-87 | [Movie Information Scrapper](https://github.com/Python-World/python-mini-projects/tree/master/projects/Movie%20Information%20Scraper)| [Anandha Krishnan Aji](https://github.com/anandhakrishnanaji)
-88 | [Fetch HTTP Status Code](https://github.com/Python-World/python-mini-projects/tree/master/projects/Fetch%20HTTP%20status%20code)| [AkshataJ96](https://github.com/AkshataJ96)
-89 | [Check Leap Year](https://github.com/Python-World/python-mini-projects/tree/master/projects/Leap_Year_Checker)| [Hariom Vyas](https://github.com/Hariom1509)
-90 | [Scrape Medium Articles](https://github.com/Python-World/python-mini-projects/tree/master/projects/Scraping%20Medium%20Articles)| [Naman Shah](https://github.com/namanshah01)
-91 | [HackerNews Scrapper](https://github.com/Python-World/python-mini-projects/tree/master/projects/Scrape_Hacker_News)| [Javokhirbek](https://github.com/leader2one)
-92 | [Reduce Image Size](https://github.com/Python-World/python-mini-projects/tree/master/projects/Reduce_image_file_size)| [Vipul Verma](https://github.com/VIPverma01)
-93 | [Easy Video Player](https://github.com/Python-World/python-mini-projects/tree/master/projects/EasyVideoPlayer)| [Bartu Yaman](https://github.com/brtymn)
-94 | [GeeksforGeeks Article downloader](https://github.com/Python-World/python-mini-projects/tree/master/projects/download%20GeeksForGeeks%20articles)| [Shiv Thakur](https://github.com/ShivSt)
-95 | [PDF to Text](https://github.com/Python-World/python-mini-projects/tree/master/projects/convert%20pdf%20to%20text)| [pi1814](https://github.com/pi1814)
-96 | [Unstructured Supplemenrary Service Data](https://github.com/Python-World/python-mini-projects/tree/master/projects/Unstructured%20Supplemenrary%20%20Service%20Data)| [ART](https://github.com/Tomyzon1728)
-97 | [Duplicate Files remover](https://github.com/Python-World/python-mini-projects/tree/master/projects/Duplicate%20files%20remover)| [Anandha Krishnan Aji](https://github.com/anandhakrishnanaji)
-98 | [PNG to ICO converter](https://github.com/Python-World/python-mini-projects/tree/master/projects/convert_png_images_to_ico_format)| [weicheansoo](https://github.com/weicheansoo)
-99 | [Find IMDB Ratings](https://github.com/Python-World/python-mini-projects/tree/master/projects/Find_imdb_rating)| [Utkarsh Bajaj](https://github.com/utkarshbajaj)
-100 | [Terminal Based Hangman Game](https://github.com/Python-World/python-mini-projects/tree/master/projects/Terminal_Based_Hangman_Game)| [neohboonyee99](https://github.com/neohboonyee99)
-101 | [Whatsapp Bot](https://github.com/Python-World/python-mini-projects/tree/master/projects/whatsapp_Bot)| [urmil89](https://github.com/urmil89)
-102 | [Zip Bruter](https://github.com/Python-World/python-mini-projects/tree/master/projects/Zip_Bruter) | [Erdoğan YOKSUL](https://www.github.com/eredotpkfr)
-103 | [CountDown Timer](https://github.com/Python-World/python-mini-projects/tree/master/projects/Countdown_timer) | [Japneet Kalra](https://github.com/japneetsingh035)
+    h1 + h3 {
+      font-weight: 100;
+    }
+
+    .cabecalho hr {
+      height: 5px;
+      color: var(--amarelo);
+      background-color: var(--amarelo);
+    }
+
+No CSS inicalmente temos o estilo para a imagem que ficará a esquerda, no cabeçalho. Logo após temos os estilos específicos para o cabeçalho: cor, padding, cor de fundo e borda inferior. Depois estilizamos todos os H3 que aparecem após um H1 com um peso de fonte básico (para retirar o negrito e apresentar uma leveza na fonte). Por fim, criamos um estilo específico para os HRs dentro de cabeçalho.
+
+## 4. Sidebar (Coluna Lateral)
+
+### HTML
+
+    <!-- CONTEUDO -->
+    <div class="container">
+      <div class="row">
+        <!-- SIDEBAR -->
+        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+          <div class="skills">
+            <label>Skill</label>
+          </div>
+          <br>
+          <label>Skill 01</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Skill 02</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Skill 03</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Skill 04</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Skill 05</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Skill 06</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Skill 07</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
+          <div class="languages">
+            <label>Languages</label>
+          </div>
+          <br>
+          <label>English</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Russian</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <label>Spanish</label><br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br><br><br>
+          <div class="contato">
+            <div class="contact">
+              <div>Contact</div>
+            </div>
+          </div>
+          <div class="contato">
+            <br><label>+123 456 789</label>
+            <br><label>Jhondoepro@freepik.com</label>
+            <br><label>1234 Park Ave 14XX, East 4432</label>
+            <br><br><br>
+          </div>
+        </div>
+
+Declaramos nosso _.container_ para a parte do conteúdo e criamos nossa linha (row). Dentro dela montaremos nosso grid responsivo. A classe _.sidebar_ será responsável por estilizar apenas esta coluna (como fizemos com _.cabecalho_ ). As classes _.skills_ e _.languages_ são responsáveis por exibir imagens específicas das suas seções (veremos elas em ação no CSS). A classe _.contact_ é usada apenas para delimitar um espaço para uma outra div. Por fim, declaramos as labels com os conteúdos e as barras de progresso.
+
+### CSS
+
+    .skills {
+      width: 270px;
+      height: 80px;
+      background: url(../img/skill.png);
+    }
+
+    .languages {
+      width: 280px;
+      height: 75px;
+      background: url(../img/languages.png);
+    }
+
+    .contact {
+      width: 285px;
+      height: 30px;
+      margin: 0 auto;
+    }
+
+    .skills label{
+      padding-left: 120px !important;
+      padding-top: 25px;
+      font-weight: bold;
+      font-size: 20px;
+      color: var(--preto);
+    }
+
+    .languages label {
+      padding-left: 105px !important;
+      padding-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--preto);
+    }
+
+    .contact div {
+      background: var(--preto);
+      color: var(--cinza);
+      border-radius: 0px 0px 50px 50px;
+      margin: 0px 50px 0px 50px;
+      font-size: 20px;
+     }
+
+    .sidebar {
+      padding: 0;
+      color: var(--white);
+      background-color: var(--preto);
+    }
+
+    .sidebar label {
+      margin-bottom: 0;
+      padding-left: 30px;
+    }
+
+    .progress {
+      border-radius: 0;
+      margin: 0 15px 0 30px;
+    }
+
+    .progress-bar {
+      background-color: var(--amarelo);
+    }
+
+    .contato {
+      font-weight: bold;
+      text-align: center;
+      color: var(--preto);
+      background-color: var(--amarelo);
+    }
+
+    .contato label {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+As duas primeiras classes são as citadas anteriormente. Sua função é apenas a de mostrar as imagens. Já conteúdo dessas duas classes são estilizados em _.skills label_ e _.languages label_, para que o texto se encaixe com as imagens. Em _.contact_ temos a delimitação do espaço para a div que está dentro dela, que é estilizada em _.contact div_ para ter as bordas de baixo arredondadas.
+
+Além disso temos os estilos específicos para a Barra Lateral, um padding-left para as labels ficarem mais distantes da margem a esquerda, retiramos o arredondamento de bordas das barras de progresso e colocamos uma margem para que elas ficassem mais ao centro.
+
+Trocamos as cores da barra de progresso, centralizamos o texto dentro da área de contato, deixamos ele em negrito e removemos o padding que havíamos colocado anteriormente somente das labels da seção de contato (para que ele não influenciasse no alinhamento centralizado).
+
+## 5. Central Bar (Barra Central)
+
+### HTML
+
+    <!-- CENTRAL BAR -->
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 centralbar">
+      <br>
+      <div class="icons"><i class="fa fa-briefcase" aria-hidden="true"></i></div><br>
+      <label>2013 - 2014</label>
+      <br><br><br><br><br><br><br>
+      <label>2015 - 2017</label>
+      <br><br><br><br><br><br><br>
+      <div class="icons"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div><br>
+      <label>2007 - 2010</label>
+      <br><br><br><br><br><br><br>
+      <div class="icons"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+    </div>
+
+Não temos muito o que comentar aqui. Declaramos a coluna central com o seu grid e temos uma classe específica para estiliza-la: _.centralbar_. As classes _.icons_ servirão para estilizar os ícones da tag < i >. As quebras de linhas são para alinhamento das labels com o texto da coluna de conteúdo que colocaremos mais a frente.
+
+### CSS
+
+    .icons {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 30px;
+      color: var(--cinza);
+      background: var(--preto);
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    .centralbar {
+      padding: 0;
+      color: var(--preto);
+      background-color: var(--cinza);
+    }
+
+    .centralbar label {
+      margin-bottom: 0;
+      font-weight: bold;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+Temos a classe dos ícones utilizadas na Barra Central, temos os estilos da _.centralbar_ e das labels. O padding está sendo utilizado para centralizar as labels em relação a coluna.
+
+## 6. Conteúdo
+
+### HTML
+
+    <!-- CONTEUDO -->
+        <div class="col-xl-7 col-lg-6 col-md-9 col-sm-9 col-9 content">
+          <br>
+          <h5><b>Professional Experience</b></h5>
+          <br>
+          <h5><b>JOB TITLES</b></h5>
+          <h5><b>COMPANY</b></h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <br>
+          <h5><b>JOB TITLES</b></h5>
+          <h5><b>COMPANY</b></h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <hr>
+          <br>
+          <h5><b>Formal Education</b></h5>
+          <br>
+          <h5><b>DEGREE TITLES</b></h5>
+          <h5><b>INSTITUTION</b></h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <hr>
+          <br>
+          <h5><b>Awards / Certificates</b></h5>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+      </div> <!-- FIM DA ROW -->
+    </div> <!-- FIM DO CONTAINER -->
+
+### CSS
+
+    .content {
+      padding: 20px;
+      color: var(--preto);
+      background-color: var(--white);
+    }
+
+    .content hr {
+      height: 2.5px;
+      color: var(--cinza);
+      background-color: var(--cinza);
+    }
+
+De todos os trechos de código esse é o mais simples. O CSS apenas estiliza a coluna do conteúdo e aplica um estilo específico para o HR. No HTML, temos apenas a declaração da coluna e da classe _.content_ para a estilização e, dentro da div, o conteúdo da página.
+
+## 7. Hospedando no Github Pages caso você já possua o repositório "username.github.io" em uso (Opcional)
+
+    $ git checkout -b gh-pages
+    $ git rebase master
+    $ git push origin gh-pages
+
+Para hospedar nosso _index.html_ dentro do Github Pages precisamos criar um branch chamado 'gh-pages' e depois precisamos atualizá-lo com base no nosso branch central 'master'. Por ultimo vamos subir essas atualizações para o repositório. É exatamente isso que esses três comandos fazem. Execute-os dentro do Git Bash e dentro da pasta do projeto (Lembre de executar sem colocar o '$').
+
+## Alguns exemplos de alunos do minicurso:
+
+(https://mizaelarthur.github.io/)
